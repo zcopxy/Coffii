@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Espresso App — Strategy &amp; Plan</title>
+<style>
+  :root{
+    --cream:#f6efe5;
+    --paper:#fffdf8;
+    --ink:#2c2018;
+    --ink-soft:#5a4a3c;
+    --espresso:#4a3528;
+    --crema:#b8732e;
+    --crema-soft:#e7c79a;
+    --line:#e6dccd;
+    --good:#3f7d4f;
+    --warn:#b5532a;
+    --warn-bg:#fbeede;
+    --good-bg:#e9f1e7;
+    --note-bg:#f1e8db;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.62;
+    font-size:16.5px;
+  }
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+  .layout{display:flex;gap:48px;align-items:flex-start;}
+  main{flex:1;min-width:0;max-width:780px;}
+  /* Hero */
+  header.hero{
+    background:linear-gradient(150deg,#3a2a1f 0%,#5a3f2c 60%,#6b4a30 100%);
+    color:#f6ecdd;
+    padding:64px 0 56px;
+    border-bottom:4px solid var(--crema);
+  }
+  header.hero .wrap{max-width:1180px;}
+  .eyebrow{
+    text-transform:uppercase;letter-spacing:.18em;font-size:12.5px;
+    color:var(--crema-soft);font-weight:700;margin:0 0 14px;
+  }
+  header.hero h1{
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:46px;line-height:1.08;margin:0 0 16px;font-weight:700;letter-spacing:-.01em;
+  }
+  header.hero p.lede{font-size:19px;max-width:640px;margin:0 0 22px;color:#efe2cf;}
+  .meta{font-size:13.5px;color:#d8c4a8;display:flex;gap:22px;flex-wrap:wrap;}
+  .meta b{color:#f1e1c8;font-weight:600;}
+  /* TOC */
+  nav.toc{
+    position:sticky;top:24px;width:236px;flex-shrink:0;
+    font-size:14px;padding-top:40px;
+  }
+  nav.toc .toc-title{text-transform:uppercase;letter-spacing:.12em;font-size:11.5px;color:var(--ink-soft);font-weight:700;margin-bottom:12px;}
+  nav.toc a{
+    display:block;color:var(--ink-soft);text-decoration:none;padding:5px 0 5px 12px;
+    border-left:2px solid var(--line);line-height:1.35;
+  }
+  nav.toc a:hover{color:var(--crema);border-left-color:var(--crema);}
+  nav.toc a .n{color:#bfae98;font-variant-numeric:tabular-nums;margin-right:7px;}
+  /* Sections */
+  section{padding:40px 0;border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  h2{
+    font-family:Georgia,serif;font-size:28px;line-height:1.15;margin:0 0 6px;
+    color:var(--espresso);font-weight:700;letter-spacing:-.01em;
+  }
+  h2 .sec-n{color:var(--crema);font-size:18px;font-weight:700;margin-right:10px;font-family:-apple-system,sans-serif;}
+  h3{font-size:18px;margin:30px 0 8px;color:var(--espresso);}
+  p{margin:0 0 14px;}
+  ul,ol{margin:0 0 14px;padding-left:22px;}
+  li{margin:6px 0;}
+  a{color:var(--crema);}
+  strong{color:var(--espresso);}
+  code{background:#efe6d8;padding:1px 6px;border-radius:5px;font-size:13.5px;color:#6b4a30;}
+  /* Callouts */
+  .callout{border-radius:12px;padding:18px 20px;margin:20px 0;border:1px solid var(--line);background:var(--note-bg);}
+  .callout .lbl{font-weight:700;font-size:12.5px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px;display:block;}
+  .callout p:last-child{margin-bottom:0;}
+  .callout.warn{background:var(--warn-bg);border-color:#ecc9a6;}
+  .callout.warn .lbl{color:var(--warn);}
+  .callout.good{background:var(--good-bg);border-color:#c8ddc2;}
+  .callout.good .lbl{color:var(--good);}
+  .callout.key{background:#fff;border-color:var(--crema-soft);border-left:4px solid var(--crema);}
+  .callout.key .lbl{color:var(--crema);}
+  /* TL;DR box */
+  .tldr{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:28px 30px;margin:36px 0 8px;box-shadow:0 4px 20px rgba(74,53,40,.06);}
+  .tldr h2{margin-top:0;}
+  .verdict-pill{display:inline-block;background:var(--good-bg);color:var(--good);border:1px solid #c8ddc2;font-weight:700;font-size:13px;padding:5px 14px;border-radius:999px;letter-spacing:.03em;}
+  .verdict-pill.amber{background:var(--warn-bg);color:var(--warn);border-color:#ecc9a6;}
+  /* Tables */
+  table{width:100%;border-collapse:collapse;margin:18px 0;font-size:14.5px;}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{background:#efe6d8;color:var(--espresso);font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.04em;}
+  tr:last-child td{border-bottom:none;}
+  td .tag{font-size:12px;font-weight:700;padding:2px 8px;border-radius:6px;white-space:nowrap;}
+  .tag.t-good{background:var(--good-bg);color:var(--good);}
+  .tag.t-warn{background:var(--warn-bg);color:var(--warn);}
+  .tag.t-neutral{background:#ece3d4;color:var(--ink-soft);}
+  /* Two-col grids */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:18px 0;}
+  .panel{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px 20px;}
+  .panel h4{margin:0 0 8px;font-size:15px;color:var(--espresso);}
+  .panel.in{border-top:3px solid var(--good);}
+  .panel.out{border-top:3px solid var(--warn);}
+  .panel ul{margin:0;padding-left:18px;font-size:14.5px;}
+  /* misc */
+  .big-num{font-family:Georgia,serif;font-size:30px;color:var(--crema);font-weight:700;line-height:1;}
+  .statrow{display:flex;gap:26px;flex-wrap:wrap;margin:18px 0;}
+  .stat{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px 20px;flex:1;min-width:150px;}
+  .stat .lbl{font-size:12.5px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.06em;margin-top:6px;}
+  footer{padding:40px 0 70px;color:var(--ink-soft);font-size:13.5px;}
+  hr.soft{border:none;border-top:1px dashed var(--line);margin:26px 0;}
+  .quote{font-family:Georgia,serif;font-style:italic;font-size:17px;color:var(--espresso);border-left:3px solid var(--crema);padding:2px 0 2px 16px;margin:18px 0;}
+  @media (max-width:900px){
+    nav.toc{display:none;}
+    header.hero h1{font-size:34px;}
+    .grid2{grid-template-columns:1fr;}
+    .layout{display:block;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Weekend Project · Strategy Memo</p>
+    <h1>The Espresso App</h1>
+    <p class="lede">A focused, beautiful, private espresso shot-logging app — and an honest plan for whether it's worth two people's weekends.</p>
+    <div class="meta">
+      <span><b>Working codename:</b> Crema (TBD)</span>
+      <span><b>Team:</b> 2 builders (code + faceless marketing)</span>
+      <span><b>Build window:</b> 1–2 weeks</span>
+      <span><b>Status:</b> Direction locked, pre-build</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+<div class="layout">
+
+  <nav class="toc">
+    <div class="toc-title">Contents</div>
+    <a href="#tldr"><span class="n">00</span>TL;DR &amp; verdict</a>
+    <a href="#strategy"><span class="n">01</span>The strategy</a>
+    <a href="#reality"><span class="n">02</span>The honest reality</a>
+    <a href="#why"><span class="n">03</span>Why espresso anyway</a>
+    <a href="#edge"><span class="n">04</span>The edge: design + the card</a>
+    <a href="#landscape"><span class="n">05</span>Competitive landscape</a>
+    <a href="#product"><span class="n">06</span>The product (concept)</a>
+    <a href="#marketing"><span class="n">07</span>Marketing engine</a>
+    <a href="#money"><span class="n">08</span>Money</a>
+    <a href="#guardrails"><span class="n">09</span>Guardrails</a>
+    <a href="#build"><span class="n">10</span>How we build it</a>
+    <a href="#open"><span class="n">11</span>Open questions &amp; next</a>
+  </nav>
+
+  <main>
+
+    <!-- TLDR -->
+    <div class="tldr" id="tldr">
+      <h2>TL;DR</h2>
+      <p style="margin-bottom:18px;"><span class="verdict-pill amber">GO — but as a craft &amp; marketing play, not a gold rush</span></p>
+      <p>Build a <strong>fast, private, genuinely beautiful espresso-only shot log</strong> for the home barista. The wedge isn't a missing feature — it's <strong>taste and focus</strong>. Every pull auto-generates a gorgeous, shareable <strong>"Shot in Review" card</strong> that doubles as the product's payoff, its viral loop, and our entire faceless-content engine.</p>
+      <p>The honest part: this niche has <strong>no hated incumbent to dethrone</strong> (the leaders are well-loved) and it's <strong>already crowded with 2025–26 clones</strong>. The realistic ceiling is <strong>~€1k/mo, maybe €4k on a good run</strong> — real cashflow, not life-changing money. We win by out-crafting soulless clones and out-marketing them with consistent faceless content, not by exploiting a gap. It's a grind with a modest, achievable payoff that we'd actually enjoy because we both love coffee.</p>
+      <div class="statrow">
+        <div class="stat"><span class="big-num">€1–4k</span><div class="lbl">Realistic monthly ceiling</div></div>
+        <div class="stat"><span class="big-num">~15+</span><div class="lbl">Existing shot loggers</div></div>
+        <div class="stat"><span class="big-num">1–2 wk</span><div class="lbl">Build (not the bottleneck)</div></div>
+      </div>
+    </div>
+
+    <!-- STRATEGY -->
+    <section id="strategy">
+      <h2><span class="sec-n">01</span>The strategy this came from</h2>
+      <p>The genre: find an iOS app that's <em>trending or growing</em>, has <em>notably bad reviews</em>, build an ~80% version that <em>fixes the top complaint</em>, and market it faceless ("the [category] app that finally fixes X"). Modest goal, two people, one-to-two-week build. It fits our DNA: privacy-first, ASO/SEO-first, on-device, no team.</p>
+      <p>We scored candidates against four tests: <strong>trending</strong>, <strong>hated incumbent to displace</strong>, <strong>clonable fast</strong>, <strong>not yet crowded</strong>. Espresso was the early front-runner from a market lens. Then we went deep — and the picture changed in an important way (next section).</p>
+      <p>Other candidates we looked at and dropped: an aquarium/reef water tracker (great on paper — genuine unmet demand, ugly dated incumbents — but <strong>killed on personal relevance</strong>: neither of us owns an aquarium, and you can't make months of faceless content about something you don't care about). Also considered: posture app, recipe organizer, whisky cellar log, and a "swing for the fences" honest AI calorie counter.</p>
+    </section>
+
+    <!-- REALITY -->
+    <section id="reality">
+      <h2><span class="sec-n">02</span>The honest reality (read this twice)</h2>
+      <p>Deep research <strong>flipped two of our four assumptions</strong>. We're keeping this front and centre so we go in with eyes open.</p>
+      <table>
+        <tr><th>Test</th><th>Verdict</th><th>Detail</th></tr>
+        <tr><td>Trending / growing</td><td><span class="tag t-good">PASS</span></td><td>Prosumer machines + specialty-coffee-at-home are genuinely growing.</td></tr>
+        <tr><td>Hated incumbent to displace</td><td><span class="tag t-warn">FAIL</span></td><td>Leaders are <strong>well-rated</strong>: Beanconqueror 4.9, Filtru 4.8, iBrewCoffee 4.7. Complaints are minor UX nits, not "this is a scam." No villain to beat.</td></tr>
+        <tr><td>Clonable in 1–2 weeks</td><td><span class="tag t-good">PASS</span></td><td>The core logger, yes. The hard-20% (BLE scales, AI coach) is what blows the budget — so we cut it from v1.</td></tr>
+        <tr><td>Not already crowded</td><td><span class="tag t-warn">FAIL</span></td><td>It's an <strong>active gold rush</strong>: ~15+ shot loggers, many shipped in 2025–26, mostly converging on the same feature list. We'd be entrant ~#15, not a first mover.</td></tr>
+      </table>
+      <div class="callout warn">
+        <span class="lbl">What this means</span>
+        <p>The game is <strong>not</strong> "exploit an obvious gap a hated app left open" — that gap doesn't exist here. The game is "<strong>out-craft a crowd of generic clones and out-market them.</strong>" That's a legitimate way to win a small niche, but it's a <strong>polish-and-distribution grind</strong>, and distribution (not code) is the real work. Nobody in this niche is rich — the category <em>leader</em> makes an estimated $5–6k/mo.</p>
+      </div>
+    </section>
+
+    <!-- WHY -->
+    <section id="why">
+      <h2><span class="sec-n">03</span>Why we do it anyway</h2>
+      <ul>
+        <li><strong>Genuine personal relevance.</strong> We're daily espresso drinkers and actually care about dialing in. That's the single biggest predictor of whether we'll sustain months of content — and it killed every "better on paper" candidate that bored us.</li>
+        <li><strong>Biggest market + best content material of the shortlist.</strong> Far more home baristas than reef-keepers, strong search volume, and espresso is <em>gorgeous on video</em> (more on that below).</li>
+        <li><strong>Clean DNA fit.</strong> Local-first, no accounts, no data collection, on-device — exactly how we like to build, and a real differentiator in a niche where users care about owning their data.</li>
+        <li><strong>The reframed game is winnable.</strong> Indie devs in this niche converge on <em>features</em>; almost none have <em>taste</em>. Taste + focus + a built-in sharing loop is a position the crowd hasn't taken.</li>
+      </ul>
+      <p class="quote">We're not trying to dethrone Beanconqueror's power users. We're taking the slice the dense, intimidating incumbents repel: the person who just bought a machine and wants to get good without reading a manual.</p>
+    </section>
+
+    <!-- EDGE -->
+    <section id="edge">
+      <h2><span class="sec-n">04</span>The edge: design-led + the Shot Card loop</h2>
+      <p>Be honest about what design is and isn't. A nice UI is <strong>copyable</strong> — it's not a moat. But in <em>this</em> situation it's the most valuable thing we can have, because of what it unlocks.</p>
+
+      <div class="callout key">
+        <span class="lbl">The core insight</span>
+        <p>Every time you pull a shot, the app auto-generates a beautiful, shareable <strong>"Shot in Review" card</strong> — the bean, the dial (dose → yield, ratio, time), grind, a taste note, an optional photo, our watermark. That one mechanic is <strong>four things at once</strong>:</p>
+      </div>
+
+      <table>
+        <tr><th>The card is…</th><th>Why it matters</th></tr>
+        <tr><td><strong>Product payoff</strong></td><td>The satisfying moment after logging — the reason to open the app every single day.</td></tr>
+        <tr><td><strong>Viral loop</strong></td><td>Every card someone shares is a branded ad with our name on it.</td></tr>
+        <tr><td><strong>Content engine</strong></td><td>It's our recurring TikTok/Reels format — we can generate these endlessly without filming ourselves.</td></tr>
+        <tr><td><strong>ASO hero</strong></td><td>The card is the App Store screenshot. The product <em>is</em> the ad.</td></tr>
+      </table>
+
+      <h3>Two card types, one engine</h3>
+      <ul>
+        <li><strong>Standard "Shot in Review"</strong> — beautiful from data alone (a beginner who didn't take a photo still gets a gorgeous card). Photo is an <em>optional enhancement, never a gate</em>.</li>
+        <li><strong>The diff card</strong> — our secret weapon. <em>"Dialed it in: 1:2.5 / 22s / sour → 1:2 / 30s / 🎯."</em> Shows a <em>win</em>, not just a stat. This is the one coffee nerds actually share on r/espresso.</li>
+      </ul>
+
+      <h3>Design discipline (so we don't blow the budget)</h3>
+      <ul>
+        <li><strong>One signature animation</strong> — a stylized pour filling a cup, or the shot-timer ring closing — used on the card reveal. <strong>Avoid the fluid-simulation tarpit</strong>; a clipped shape + gradient mask "reads" as liquid without the physics. Time-box it to a day.</li>
+        <li><strong>Calm everywhere else.</strong> Warm palette, custom iconography (your "almost-emoji-but-tasteful" instinct), generous spacing, micro-interactions, haptics on shot start/stop. Calm <em>is</em> the aesthetic — over-animating reads cheap.</li>
+        <li><strong>Aim it at the beginner-to-intermediate prosumer</strong> — the bigger, softer, less-defended segment. Hardcore nerds buy on data depth and won't switch for beauty; that's fine, they're not our customer.</li>
+      </ul>
+    </section>
+
+    <!-- LANDSCAPE -->
+    <section id="landscape">
+      <h2><span class="sec-n">05</span>Competitive landscape</h2>
+      <table>
+        <tr><th>App</th><th>Rating</th><th>Read</th><th>Our angle vs them</th></tr>
+        <tr><td><strong>Filtru</strong> <span class="tag t-neutral">leader</span></td><td>4.8</td><td>Clean, native, feature-rich. ~$5–6k/mo, the category leader. But the name is literal — it's <strong>filter/pour-over-first</strong>, multi-method; espresso is one mode.</td><td>Espresso-<em>only</em> depth (pressure, pre-infusion, basket, days-off-roast as first-class). Out-focus, don't out-feature.</td></tr>
+        <tr><td><strong>Beanconqueror</strong></td><td>4.9</td><td>Open-source, powerful, beloved by hardcore users. Looks and feels like a <strong>developer tool</strong> — dense, form-heavy, intimidating.</td><td>The approachable, beautiful alternative for people Beanconqueror scares off.</td></tr>
+        <tr><td><strong>iBrewCoffee</strong></td><td>4.7</td><td>Solid all-rounder, multi-method.</td><td>Same focus/taste wedge.</td></tr>
+        <tr><td><strong>~12+ gold-rush clones</strong> (2025–26)</td><td>varies</td><td>Default-SwiftUI generic — tidy but soulless. All converging on the same feature list.</td><td>This is who we actually beat: with <strong>taste + the card loop + consistent marketing</strong>.</td></tr>
+      </table>
+      <div class="callout">
+        <span class="lbl">Positioning, one line</span>
+        <p><em>"The espresso app that's actually a pleasure to use — fast, private, and beautiful."</em> For the newer home barista the dense incumbents repel and the broad apps overwhelm.</p>
+      </div>
+    </section>
+
+    <!-- PRODUCT -->
+    <section id="product">
+      <h2><span class="sec-n">06</span>The product (concept level)</h2>
+      <p>The core loop is one sentence: <strong>last good pull → what changed → next shot</strong>, logged in ~10 seconds, ending in a card. Everything serves that. (We're deliberately <em>not</em> doing screen-by-screen here — that's the build doc.)</p>
+      <div class="grid2">
+        <div class="panel in">
+          <h4>✓ In for v1</h4>
+          <ul>
+            <li>Local-first (SwiftData), <strong>no account</strong></li>
+            <li>Beans, grinder, machine, basket profiles</li>
+            <li>Fast shot log: dose→yield, ratio, time, grind, temp; advanced fields hidden by default</li>
+            <li>Live shot timer + haptics</li>
+            <li>One-tap <strong>re-log</strong> last shot</li>
+            <li>The <strong>Shot Card</strong> + the <strong>diff card</strong></li>
+            <li>Pinned "next shot" note + "last good pull"</li>
+            <li>Per-bean history + a few charts</li>
+            <li>Bean-resting reminders</li>
+            <li>CSV/JSON export (their data, freely)</li>
+          </ul>
+        </div>
+        <div class="panel out">
+          <h4>✗ Deferred (the hard-20%)</h4>
+          <ul>
+            <li>Bluetooth scale integration (Acaia / Bookoo) — biggest time sink + permanent QA burden</li>
+            <li>AI dial-in coach — adds backend + cost + credibility risk; do it later as a paid "+" tier</li>
+            <li>Community / social feed</li>
+            <li>Full iCloud sync (start local; add later)</li>
+            <li>Pour-over / other brew methods — stay espresso-pure</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARKETING -->
+    <section id="marketing">
+      <h2><span class="sec-n">07</span>The marketing engine (faceless, no aesthetic setup needed)</h2>
+      <div class="callout good">
+        <span class="lbl">The unlock</span>
+        <p>"My setup isn't pretty enough for TikTok" is a non-issue. The best faceless coffee content is <strong>tight macro</strong> — the stream tiger-striping out of a naked portafilter, crema swirling, the first drip. Real footage, shows <strong>no face, no kitchen, no setup</strong> — just four inches around the cup. A ~€30 phone macro lens + a clean dark background is the whole kit.</p>
+      </div>
+      <h3>Three content lanes</h3>
+      <ol>
+        <li><strong>Macro pours</strong> — real, gorgeous, anonymous. Carries our technical credibility.</li>
+        <li><strong>App screen-recordings</strong> — the animations + the card reveal. This is where the product sells itself.</li>
+        <li><strong>AI imagery — vibe only.</strong> <span style="color:var(--warn);font-weight:600;">Caution:</span> coffee people instantly clock fake crema / impossible pours. Use AI for ambient/background/mood, <strong>never</strong> for anything that implies "we know coffee." Let real macro carry the authority.</li>
+      </ol>
+      <h3>Formats &amp; channels</h3>
+      <ul>
+        <li>Repeatable formats: diagnose-this-shot (sour/bitter/channeling), before→after dial-in, myth-busting, satisfying timer/card reveal — all with the card as the through-line and CTA.</li>
+        <li>Channels: <strong>r/espresso</strong> (respect the self-promo rules), <strong>Espresso Aficionados Discord</strong> for beta credibility, TikTok/Reels for reach, problem-first SEO pages ("why is my espresso sour", ratio calculator) → install.</li>
+        <li>Don't lead with "AI." Lead with the result and the beauty.</li>
+      </ul>
+      <div class="callout">
+        <span class="lbl">Expectation-set</span>
+        <p>Treat <em>user-shared</em> cards as upside, not the plan. The reliable engine is <strong>our own posting cadence</strong>. Design the card so organic sharing is frictionless — and if it catches, great — but bet on our consistency, not on strangers posting unprompted.</p>
+      </div>
+    </section>
+
+    <!-- MONEY -->
+    <section id="money">
+      <h2><span class="sec-n">08</span>Money</h2>
+      <h3>Pricing model</h3>
+      <ul>
+        <li><strong>Freemium</strong> core, with a <strong>pay-once Pro</strong>: €19.99 launch / €24.99 standard (lifetime).</li>
+        <li>Annual €14.99 and monthly €2.49 offered, but <strong>not the hero</strong> — this audience resents subscriptions for a logging tool.</li>
+        <li><strong>Never paywall their own data or export.</strong> Trust is the brand.</li>
+        <li>An "AI+" tier can come later, once the coach exists and earns its keep.</li>
+      </ul>
+      <h3>The reality math</h3>
+      <p>Pay-once €19.99 nets roughly <strong>~€14</strong> after VAT (~21%) and Apple's 15% (Small Business Program). So:</p>
+      <table>
+        <tr><th>Target</th><th>Net sales / mo</th><th>Installs / mo needed (~3% buy)</th></tr>
+        <tr><td>€1,000 / mo</td><td>~70 sales</td><td>~2,300</td></tr>
+        <tr><td>€4,000 / mo</td><td>~285 sales</td><td>~9,500</td></tr>
+      </table>
+      <p>This is a <strong>cashflow business, not MRR</strong> — pay-once means we must keep acquiring. That's exactly why the content engine has to be sustainable and the card loop has to pull its weight. €1k/mo is a plausible, satisfying outcome for a weekend project; €4k is the optimistic-but-real top end.</p>
+    </section>
+
+    <!-- GUARDRAILS -->
+    <section id="guardrails">
+      <h2><span class="sec-n">09</span>Guardrails</h2>
+      <h3>App Review</h3>
+      <ul>
+        <li><strong>Guideline 4.3 (duplicate functionality)</strong> is the top risk — clear it with our own name, icon, UI, and at least one visibly distinct feature (the card loop does this).</li>
+        <li><strong>4.1 (copycats)</strong> — don't ape anyone's look.</li>
+        <li><strong>2.3.7 (metadata)</strong> — never put a competitor's name in our App Store listing. (We <em>can</em> bid on their brand via Apple Search Ads.)</li>
+      </ul>
+      <h3>Comparative marketing</h3>
+      <ul>
+        <li>In TikTok captions we can name a competitor only with <strong>currently-true, verifiable facts</strong> — never their logo/screenshots, never the word "scam." Nominative fair use + EU comparative-advertising rules.</li>
+      </ul>
+      <h3>Privacy (our brand)</h3>
+      <ul>
+        <li>No accounts, no analytics SDKs that phone home, no data collection. "Your shots never leave your phone" is both true and a selling point.</li>
+      </ul>
+    </section>
+
+    <!-- BUILD -->
+    <section id="build">
+      <h2><span class="sec-n">10</span>How we build it</h2>
+      <ul>
+        <li><strong>Stack:</strong> SwiftUI + SwiftData, local-first, optional iCloud later. iOS-first.</li>
+        <li><strong>Speed:</strong> AI agentic coding makes the clean CRUD app cheap and fast — realistically a working v1 in the 1–2 week window if we hold scope.</li>
+        <li><strong>The mindset that matters:</strong> the build was <em>never</em> the bottleneck. Distribution is. Every hour we'd spend gold-plating a feature is better spent on the card design and the first 30 pieces of content.</li>
+      </ul>
+      <div class="callout key">
+        <span class="lbl">If you read one line</span>
+        <p>Ship a small, beautiful, focused thing fast — then spend the real effort marketing it consistently for months. The app is the easy part.</p>
+      </div>
+    </section>
+
+    <!-- OPEN -->
+    <section id="open">
+      <h2><span class="sec-n">11</span>Open questions &amp; next steps</h2>
+      <h3>Decisions to make together</h3>
+      <ul>
+        <li><strong>Name.</strong> Working ideas: <em>Crema, Pull, Dialed, Ristretto, Tamp, Shot, Demitasse, Naked (portafilter pun)</em>. Needs to be App-Store-searchable and not taken.</li>
+        <li><strong>Freemium line:</strong> what's free vs Pro? (Proposal: unlimited logging free; Pro = charts, diff cards, custom card themes, export.)</li>
+        <li><strong>Card aesthetic direction</strong> — one default theme we both love before anything else.</li>
+        <li><strong>Who owns what</strong> — code split, content split, posting cadence.</li>
+      </ul>
+      <h3>What's explicitly deferred</h3>
+      <p>BLE scales, AI coach, community, full iCloud sync, non-espresso brew methods. All are "earn it later," not v1.</p>
+      <h3>Immediate next step</h3>
+      <p>If we're both in: lock the name + freemium line, then produce the build spec (screen-by-screen + the signature animation) and a content starter kit (the repeatable formats + first 10 hooks). The strategy work is done; the rest is deciding and doing.</p>
+      <div class="callout">
+        <span class="lbl">Gut-check for the partner</span>
+        <p>This is a <strong>modest, eyes-open bet</strong>: small niche, no easy gap, ~€1–4k/mo ceiling, won on craft + consistent marketing rather than a clever exploit. The upside is it's genuinely fun for two coffee people, cheap to build, and the card loop gives us a real shot at the content compounding. If "fun + a few hundred to a few thousand a month + great portfolio piece" is worth a couple of weekends + a marketing habit — it's a go.</p>
+      </div>
+    </section>
+
+    <footer>
+      <hr class="soft">
+      <p>Internal strategy memo · espresso app · v1 · for the two of us. Numbers are research-grounded estimates, not guarantees. Everything here is a decision we can still change.</p>
+    </footer>
+
+  </main>
+</div>
+</div>
+
+</body>
+</html>
