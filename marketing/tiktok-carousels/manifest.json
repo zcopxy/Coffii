@@ -1,0 +1,340 @@
+[
+  {
+    "carousel": "01",
+    "carousel_title": "From Bean to Cup",
+    "slide": "01",
+    "source": "source/c01-s01-opening-bag.png",
+    "eyebrow": "THE MORNING RITUAL",
+    "headline": "Bean to cup, one quiet shot at a time.",
+    "footer": "Coffii",
+    "exports": {
+      "4x5": "4x5/carousel-01/c01-s01-opening-bag-4x5.png",
+      "9x16": "9x16/carousel-01/c01-s01-opening-bag-9x16.png"
+    }
+  },
+  {
+    "carousel": "01",
+    "carousel_title": "From Bean to Cup",
+    "slide": "02",
+    "source": "source/c01-s02-weigh-grind.png",
+    "eyebrow": "02 - WEIGH & GRIND",
+    "headline": "Eighteen grams, dialed in.",
+    "footer": "Coffii",
+    "exports": {
+      "4x5": "4x5/carousel-01/c01-s02-weigh-grind-4x5.png",
+      "9x16": "9x16/carousel-01/c01-s02-weigh-grind-9x16.png"
+    }
+  },
+  {
+    "carousel": "01",
+    "carousel_title": "From Bean to Cup",
+    "slide": "03",
+    "source": "source/c01-s03-dose-tamp.png",
+    "eyebrow": "03 - DOSE & TAMP",
+    "headline": "Level, press, breathe.",
+    "footer": "Coffii",
+    "exports": {
+      "4x5": "4x5/carousel-01/c01-s03-dose-tamp-4x5.png",
+      "9x16": "9x16/carousel-01/c01-s03-dose-tamp-9x16.png"
+    }
+  },
+  {
+    "carousel": "01",
+    "carousel_title": "From Bean to Cup",
+    "slide": "04",
+    "source": "source/c01-s04-pull-payoff.png",
+    "eyebrow": "04 - THE PULL",
+    "headline": "Every shot, worth remembering.",
+    "footer": "Log it. Share it. Coffii",
+    "exports": {
+      "4x5": "4x5/carousel-01/c01-s04-pull-payoff-4x5.png",
+      "9x16": "9x16/carousel-01/c01-s04-pull-payoff-9x16.png"
+    }
+  },
+  {
+    "carousel": "02",
+    "carousel_title": "Slow Mornings",
+    "slide": "01",
+    "source": "source/c02-s01-bag-light.png",
+    "eyebrow": "SLOW MORNINGS",
+    "headline": "Before the first cup.",
+    "footer": "Coffii",
+    "exports": {
+      "4x5": "4x5/carousel-02/c02-s01-bag-light-4x5.png",
+      "9x16": "9x16/carousel-02/c02-s01-bag-light-9x16.png"
+    }
+  },
+  {
+    "carousel": "02",
+    "carousel_title": "Slow Mornings",
+    "slide": "02",
+    "source": "source/c02-s02-hands-work.png",
+    "eyebrow": "WEIGH - GRIND - TAMP",
+    "headline": "Eighteen grams of intention.",
+    "footer": "Coffii",
+    "exports": {
+      "4x5": "4x5/carousel-02/c02-s02-hands-work-4x5.png",
+      "9x16": "9x16/carousel-02/c02-s02-hands-work-9x16.png"
+    }
+  },
+  {
+    "carousel": "02",
+    "carousel_title": "Slow Mornings",
+    "slide": "03",
+    "source": "source/c02-s03-the-drop.png",
+    "eyebrow": "THE PULL",
+    "headline": "Thirty seconds of amber.",
+    "footer": "Coffii - your espresso, logged.",
+    "exports": {
+      "4x5": "4x5/carousel-02/c02-s03-the-drop-4x5.png",
+      "9x16": "9x16/carousel-02/c02-s03-the-drop-9x16.png"
+    }
+  },
+  {
+    "carousel": "03",
+    "carousel_title": "The Full Ritual",
+    "slide": "01",
+    "source": "source/c03-s01-open.png",
+    "eyebrow": "01 - OPEN",
+    "headline": "First breath of roast.",
+    "footer": "Coffii",
+    "exports": {
+      "4x5": "4x5/carousel-03/c03-s01-open-4x5.png",
+      "9x16": "9x16/carousel-03/c03-s01-open-9x16.png"
+    }
+  },
+  {
+    "carousel": "03",
+    "carousel_title": "The Full Ritual",
+    "slide": "02",
+    "source": "source/c03-s02-weigh.png",
+    "eyebrow": "02 - WEIGH",
+    "headline": "Dial in the dose.",
+    "footer": "Coffii",
+    "exports": {
+      "4x5": "4x5/carousel-03/c03-s02-weigh-4x5.png",
+      "9x16": "9x16/carousel-03/c03-s02-weigh-9x16.png"
+    }
+  },
+  {
+    "carousel": "03",
+    "carousel_title": "The Full Ritual",
+    "slide": "03",
+    "source": "source/c03-s03-grind.png",
+    "eyebrow": "03 - GRIND",
+    "headline": "Fine, not too fine.",
+    "footer": "Coffii",
+    "exports": {
+      "4x5": "4x5/carousel-03/c03-s03-grind-4x5.png",
+      "9x16": "9x16/carousel-03/c03-s03-grind-9x16.png"
+    }
+  },
+  {
+    "carousel": "03",
+    "carousel_title": "The Full Ritual",
+    "slide": "04",
+    "source": "source/c03-s04-level-tamp.png",
+    "eyebrow": "04 - LEVEL & TAMP",
+    "headline": "A flat bed pulls.",
+    "footer": "Coffii",
+    "exports": {
+      "4x5": "4x5/carousel-03/c03-s04-level-tamp-4x5.png",
+      "9x16": "9x16/carousel-03/c03-s04-level-tamp-9x16.png"
+    }
+  },
+  {
+    "carousel": "03",
+    "carousel_title": "The Full Ritual",
+    "slide": "05",
+    "source": "source/c03-s05-pull.png",
+    "eyebrow": "05 - PULL",
+    "headline": "Twenty-five seconds.",
+    "footer": "Coffii",
+    "exports": {
+      "4x5": "4x5/carousel-03/c03-s05-pull-4x5.png",
+      "9x16": "9x16/carousel-03/c03-s05-pull-9x16.png"
+    }
+  },
+  {
+    "carousel": "03",
+    "carousel_title": "The Full Ritual",
+    "slide": "06",
+    "source": "source/c03-s06-log-it.png",
+    "eyebrow": "06 - LOG IT",
+    "headline": "Every shot remembered.",
+    "footer": "Coffii",
+    "exports": {
+      "4x5": "4x5/carousel-03/c03-s06-log-it-4x5.png",
+      "9x16": "9x16/carousel-03/c03-s06-log-it-9x16.png"
+    }
+  },
+  {
+    "carousel": "04",
+    "carousel_title": "Dial In One Thing",
+    "slide": "01",
+    "source": "source/c04-s01-baseline.png",
+    "eyebrow": "DIAL IN",
+    "headline": "Start with eighteen.",
+    "footer": "Coffii",
+    "exports": {
+      "4x5": "4x5/carousel-04/c04-s01-baseline-4x5.png",
+      "9x16": "9x16/carousel-04/c04-s01-baseline-9x16.png"
+    }
+  },
+  {
+    "carousel": "04",
+    "carousel_title": "Dial In One Thing",
+    "slide": "02",
+    "source": "source/c04-s02-adjust-grind.png",
+    "eyebrow": "CHANGE ONE THING",
+    "headline": "Finer by a notch.",
+    "footer": "Coffii",
+    "exports": {
+      "4x5": "4x5/carousel-04/c04-s02-adjust-grind-4x5.png",
+      "9x16": "9x16/carousel-04/c04-s02-adjust-grind-9x16.png"
+    }
+  },
+  {
+    "carousel": "04",
+    "carousel_title": "Dial In One Thing",
+    "slide": "03",
+    "source": "source/c04-s03-taste-tune.png",
+    "eyebrow": "TASTE, THEN TUNE",
+    "headline": "Closer every pull.",
+    "footer": "Coffii",
+    "exports": {
+      "4x5": "4x5/carousel-04/c04-s03-taste-tune-4x5.png",
+      "9x16": "9x16/carousel-04/c04-s03-taste-tune-9x16.png"
+    }
+  },
+  {
+    "carousel": "04",
+    "carousel_title": "Dial In One Thing",
+    "slide": "04",
+    "source": "source/c04-s04-review-pattern.png",
+    "eyebrow": "SAVE THE SETUP",
+    "headline": "Remember what worked.",
+    "footer": "Coffii",
+    "exports": {
+      "4x5": "4x5/carousel-04/c04-s04-review-pattern-4x5.png",
+      "9x16": "9x16/carousel-04/c04-s04-review-pattern-9x16.png"
+    }
+  },
+  {
+    "carousel": "05",
+    "carousel_title": "Shot in Review",
+    "slide": "01",
+    "source": "source/c05-s01-after-pull.png",
+    "eyebrow": "AFTER THE PULL",
+    "headline": "What changed?",
+    "footer": "Coffii",
+    "exports": {
+      "4x5": "4x5/carousel-05/c05-s01-after-pull-4x5.png",
+      "9x16": "9x16/carousel-05/c05-s01-after-pull-9x16.png"
+    }
+  },
+  {
+    "carousel": "05",
+    "carousel_title": "Shot in Review",
+    "slide": "02",
+    "source": "source/c05-s02-shot-tells-you.png",
+    "eyebrow": "SHOT IN REVIEW",
+    "headline": "The shot tells you.",
+    "footer": "Coffii",
+    "exports": {
+      "4x5": "4x5/carousel-05/c05-s02-shot-tells-you-4x5.png",
+      "9x16": "9x16/carousel-05/c05-s02-shot-tells-you-9x16.png"
+    }
+  },
+  {
+    "carousel": "05",
+    "carousel_title": "Shot in Review",
+    "slide": "03",
+    "source": "source/c05-s03-share-good-ones.png",
+    "eyebrow": "SHARE",
+    "headline": "Send the good ones.",
+    "footer": "Coffii",
+    "exports": {
+      "4x5": "4x5/carousel-05/c05-s03-share-good-ones-4x5.png",
+      "9x16": "9x16/carousel-05/c05-s03-share-good-ones-9x16.png"
+    }
+  },
+  {
+    "carousel": "06",
+    "carousel_title": "New Bag Baseline",
+    "slide": "01",
+    "source": "source/c06-s01-fresh-bag.png",
+    "eyebrow": "FRESH BAG",
+    "headline": "Reset the ritual.",
+    "footer": "Coffii",
+    "exports": {
+      "4x5": "4x5/carousel-06/c06-s01-fresh-bag-4x5.png",
+      "9x16": "9x16/carousel-06/c06-s01-fresh-bag-9x16.png"
+    }
+  },
+  {
+    "carousel": "06",
+    "carousel_title": "New Bag Baseline",
+    "slide": "02",
+    "source": "source/c06-s02-first-pull.png",
+    "eyebrow": "FIRST PULL",
+    "headline": "Learn the roast.",
+    "footer": "Coffii",
+    "exports": {
+      "4x5": "4x5/carousel-06/c06-s02-first-pull-4x5.png",
+      "9x16": "9x16/carousel-06/c06-s02-first-pull-9x16.png"
+    }
+  },
+  {
+    "carousel": "06",
+    "carousel_title": "New Bag Baseline",
+    "slide": "03",
+    "source": "source/c06-s03-keep-thread.png",
+    "eyebrow": "NOTES",
+    "headline": "Keep the thread.",
+    "footer": "Coffii",
+    "exports": {
+      "4x5": "4x5/carousel-06/c06-s03-keep-thread-4x5.png",
+      "9x16": "9x16/carousel-06/c06-s03-keep-thread-9x16.png"
+    }
+  },
+  {
+    "carousel": "07",
+    "carousel_title": "Espresso Only",
+    "slide": "01",
+    "source": "source/c07-s01-espresso-only.png",
+    "eyebrow": "NO MILK, NO NOISE",
+    "headline": "Just the shot.",
+    "footer": "Coffii",
+    "exports": {
+      "4x5": "4x5/carousel-07/c07-s01-espresso-only-4x5.png",
+      "9x16": "9x16/carousel-07/c07-s01-espresso-only-9x16.png"
+    }
+  },
+  {
+    "carousel": "07",
+    "carousel_title": "Espresso Only",
+    "slide": "02",
+    "source": "source/c07-s02-local-first.png",
+    "eyebrow": "LOCAL FIRST",
+    "headline": "Your notes stay yours.",
+    "footer": "Coffii",
+    "exports": {
+      "4x5": "4x5/carousel-07/c07-s02-local-first-4x5.png",
+      "9x16": "9x16/carousel-07/c07-s02-local-first-9x16.png"
+    }
+  },
+  {
+    "carousel": "07",
+    "carousel_title": "Espresso Only",
+    "slide": "03",
+    "source": "source/c07-s03-remember-pull.png",
+    "eyebrow": "COFFII",
+    "headline": "Remember every pull.",
+    "footer": "Coffii",
+    "exports": {
+      "4x5": "4x5/carousel-07/c07-s03-remember-pull-4x5.png",
+      "9x16": "9x16/carousel-07/c07-s03-remember-pull-9x16.png"
+    }
+  }
+]
